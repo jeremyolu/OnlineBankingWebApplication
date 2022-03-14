@@ -1,0 +1,92 @@
+﻿
+<div class="account-topbar">
+    <div class="container">
+        <div class="account-topbar-content">
+            <div id="name-account-section">
+                <p class="account-topbar-name-title">Welcome back, Jeremy!</p>
+            </div>
+            <div id="links-account-section">
+                <ul>
+                    <li>My Messages</li>
+                    <span class="account-topbar-link-divider">|</span>
+                    <li>My Accounts</li>
+                    <span class="account-topbar-link-divider">|</span>
+                    <li>My Settings</li>
+                    <span class="account-topbar-link-divider">|</span>
+                    <li>Help Center</li>
+                    <span class="account-topbar-link-divider">|</span>
+                    <li>Logout</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar main-background-color">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Online Banking", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Basic Current Account</a></li>
+                        <li><a href="#">Ultimate Current Account</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">News <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Basic Current Account</a></li>
+                        <li><a href="#">Ultimate Current Account</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Current Accounts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Apply New Current Account</a></li>
+                        <li><a href="#">Basic Current Account</a></li>
+                        <li><a href="#">Ultimate Current Account</a></li>
+                        <li><a href="#">Current Account Help</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Loans <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Apply New Loan</a></li>
+                        <li><a href="#">Loans Home</a></li>
+                        <li><a href="#">Loans Help</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Savings <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Basic Current Account</a></li>
+                        <li><a href="#">Ultimate Current Account</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Basic Current Account</a></li>
+                        <li><a href="#">Ultimate Current Account</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Help <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Basic Current Account</a></li>
+                        <li><a href="#">Ultimate Current Account</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

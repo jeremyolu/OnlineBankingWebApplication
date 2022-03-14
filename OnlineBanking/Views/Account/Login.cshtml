@@ -1,0 +1,54 @@
+﻿@model OnlineBanking.Data.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div id="login-page">
+    <h2>Log into your Online Banking account</h2>
+
+    <hr />
+
+    @if (ViewBag.Message == "applicationsuccess")
+    {
+<div class="registration-success-message">
+    <p>Congraduations - you have successfully registered. Login now to manage view your accounts!</p>
+</div>
+    }
+
+    <h4>Login with your unique account number and password.</h4>
+
+    <br />
+
+    <div class="login-form-container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label>Account No</label>
+                <p>Your unique account number so we know who you are.</p>
+                @Html.EditorFor(model => model.AccountNumber, new { htmlAttributes = new { @class = "form-control", @type = "number", @placeholder = "Enter Account No" } })
+                @Html.ValidationMessageFor(model => model.AccountNumber, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label>Account Password</label>
+                <p>Your password for your online banking account.</p>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password", @placeholder = "Enter Password" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login Securely" class="btn btn-main" />
+            </div>
+        }
+    </div>
+    <a href="#" class="main-link">Forgotten your account password?</a>
+    <br />
+    <a href="#" class="main-link">No account? Register now!</a>
+</div>
+
+
+
+

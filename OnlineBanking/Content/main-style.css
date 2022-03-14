@@ -1,0 +1,128 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 300 !important;
+}
+
+/*main*/
+
+.main-background-color {
+    background-color: #006A4D !important;
+}
+
+.main-color {
+    color: #006A4D !important;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+    margin-bottom: 10px !important;
+}
+
+a.main-link {
+    color: #006A4D !important;
+    text-decoration: underline;
+    display: block;
+}
+
+.btn-main {
+    background-color: #006A4D;
+    color: #FFFFFF;
+}
+
+.btn-main:hover {
+    background-color: #00573F;
+    color: #FFFFFF;
+}
+
+.spacer {
+    margin-top: 20px;
+}
+
+.text-danger {
+    font-weight: 500;
+}
+
+/*top bar*/
+.account-topbar {
+    background-color: white;
+    color: black;
+    padding: 20px 0 12px 0;
+}
+
+.account-topbar-name-title {
+    font-size: 16px;
+}
+
+.account-topbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-topbar li {
+    display: inline;
+    color: green;
+}
+
+span.account-topbar-link-divider {
+    font-size: 18px;
+    color: black;
+}
+
+/*navbar*/
+
+.navbar a {
+    color: #FFFFFF !important;
+}
+
+.navbar a:hover {
+    color: #000000 !important;
+}
+
+.navbar .dropdown-menu a {
+    color: #000000 !important;
+}
+
+/*footer*/
+
+footer {
+    background-color: #006A4D;
+    color: #FFFFFF;
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-content ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 10px;
+}
+
+footer .footer-content li {
+    padding: 5px;
+}
+
+footer hr {
+    border-top: 2px solid #FFFFFF;
+}
+
+footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer .footer-bottom {
+    text-align: left;
+    padding: 10px;
+}
+
+.ft {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
