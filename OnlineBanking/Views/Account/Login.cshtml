@@ -1,4 +1,4 @@
-﻿@model OnlineBanking.Data.ViewModels.LoginViewModel
+﻿@model OnlineBanking.Data.ViewModels.AuthenticationViewModels.LoginViewModel
 
 @{
     ViewBag.Title = "Login";
@@ -44,9 +44,15 @@
             </div>
         }
     </div>
-    <a href="#" class="main-link">Forgotten your account password?</a>
-    <br />
-    <a href="#" class="main-link">No account? Register now!</a>
+    <div class="help-links-container">
+        <h4>Help Links</h4>
+        <div class="spacer"></div>
+        <a href="/account/forgotpassword" class="main-link">Forgotten your account password?</a>
+        <div class="spacer"></div>
+        <a href="/account/register" class="main-link">No account? Register now!</a>
+        <div class="spacer"></div>
+        <a href="/account/testaccounts" class="main-link">Login with test accounts</a>
+    </div>
 </div>
 
 

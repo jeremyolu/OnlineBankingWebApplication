@@ -1,6 +1,8 @@
-﻿body {
+﻿body, html {
     font-family: 'Open Sans', sans-serif !important;
     font-weight: 300 !important;
+    background-color: #EFEDEA;
+    height: 100%;
 }
 
 /*main*/
@@ -11,6 +13,11 @@
 
 .main-color {
     color: #006A4D !important;
+}
+
+.page-heading {
+    font-weight: 400;
+    text-decoration: underline;
 }
 
 input,
@@ -29,6 +36,10 @@ a.main-link {
 .btn-main {
     background-color: #006A4D;
     color: #FFFFFF;
+    border: none !important;
+    outline: none !important;
+    width: 150px;
+    border-radius: 10px;
 }
 
 .btn-main:hover {
@@ -44,7 +55,16 @@ a.main-link {
     font-weight: 500;
 }
 
+.help-links-container {
+    background-color: #FFFFFF;
+    border: 1.3px solid #CCCCCC;
+    border-radius: 10px;
+    max-width: 280px;
+    padding: 0 20px 20px 20px;
+}
+
 /*top bar*/
+
 .account-topbar {
     background-color: white;
     color: black;
@@ -85,10 +105,120 @@ span.account-topbar-link-divider {
     color: #000000 !important;
 }
 
+/*homepage*/
+
+.hero-image {
+    position: relative;
+    height: 35vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/heros/register-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/*dashboard*/
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.account-item h4 {
+    font-weight: 300;
+}
+
+h4.account-name-text {
+    font-size: 30px;
+}
+
+h4.account-balance-text {
+    font-size: 25px;
+}
+
+.card {
+    background-image: linear-gradient(rgba(0, 106, 77, 1), rgba(0, 106, 77, 0.8));
+    height: 310px;
+    width: 500px;
+    border-radius: 10px;
+    color: white;
+    margin: 20px;
+    font-size: 16px;
+    box-shadow: 2px 2px 20px #707070;
+    cursor: pointer;
+}
+
+.top-block {
+    display: inline-block;
+    width: 500px;
+    height: 130px;
+}
+
+.bottom-block {
+    display: inline-block;
+    width: 500px;
+    height: 155px;
+}
+
+.card-account {
+    float: right;
+    margin: 20px;
+    position: relative;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.card-details {
+    float: left;
+    margin: 20px;
+    position: relative;
+    top: 38px;
+}
+
+.card-name {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.card-icon {
+    float: right;
+    margin: 0 20px 0 0;
+    margin-top: 75px;
+}
+
+.circle-left {
+    margin-right: -15px;
+    opacity: 0.7;
+}
+
+.card-number {
+    font-size: 28px;
+    margin: -15px 0 0 0;
+    text-align-last: center;
+}
+
 /*footer*/
 
 footer {
     background-color: #006A4D;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     color: #FFFFFF;
     border-radius: 4px;
     margin-top: 20px;
@@ -104,6 +234,10 @@ footer .footer-content ul {
 
 footer .footer-content li {
     padding: 5px;
+}
+
+footer .footer-content li a {
+    color: #FFFFFF;
 }
 
 footer hr {

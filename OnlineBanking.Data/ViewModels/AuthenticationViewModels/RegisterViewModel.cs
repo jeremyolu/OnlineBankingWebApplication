@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace OnlineBanking.Data.ViewModels
+namespace OnlineBanking.Data.ViewModels.AuthenticationViewModels
 {
     public class RegisterViewModel
     {

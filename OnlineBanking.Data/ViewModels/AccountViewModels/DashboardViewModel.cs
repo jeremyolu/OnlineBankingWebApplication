@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineBanking.Data.Models;
 
 namespace OnlineBanking.Data.ViewModels.AccountViewModels
 {
     public class DashboardViewModel
     {
-
+        public Customer Customer { get; set; }
     }
 }

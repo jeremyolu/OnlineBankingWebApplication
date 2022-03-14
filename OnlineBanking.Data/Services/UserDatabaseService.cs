@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using OnlineBanking.Data.Helpers;
-using OnlineBanking.Data.Models;
-using OnlineBanking.Data.ViewModels;
+using OnlineBanking.Data.ViewModels.AuthenticationViewModels;
 using System;
 using System.Data;
 using System.Data.SqlClient;

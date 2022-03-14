@@ -1,4 +1,5 @@
 ﻿using OnlineBanking.Data.ViewModels;
+using OnlineBanking.Data.ViewModels.AuthenticationViewModels;
 
 namespace OnlineBanking.Data.Services
 {

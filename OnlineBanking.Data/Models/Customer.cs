@@ -13,4 +13,6 @@ namespace OnlineBanking.Data.Models
         public string Address { get; set; }
         public string Postcode { get; set; }
     }
+
 }
+

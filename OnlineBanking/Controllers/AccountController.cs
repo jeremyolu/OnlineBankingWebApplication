@@ -1,11 +1,12 @@
 ﻿using OnlineBanking.Data.Services;
-using OnlineBanking.Data.ViewModels;
+using OnlineBanking.Data.ViewModels.AuthenticationViewModels;
 using System.Web.Mvc;
 
 namespace OnlineBanking.Controllers
 {
     public class AccountController : Controller
     {
+        [Route("account/dashboard")]
         public ActionResult Index()
         {
             return View();
@@ -42,6 +43,13 @@ namespace OnlineBanking.Controllers
                 ViewBag.Message = "applicationsuccess";
             }
 
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginViewModel model)
+        {
             return View();
         }
     }
