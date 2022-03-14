@@ -135,6 +135,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\main-style.css" />
+    <Content Include="Images\heros\safe-banking-hero.jpg" />
     <Content Include="Images\heros\register-hero.jpg" />
     <Content Include="Images\logos\main-logo.png" />
     <Content Include="Scripts\bootstrap.js" />

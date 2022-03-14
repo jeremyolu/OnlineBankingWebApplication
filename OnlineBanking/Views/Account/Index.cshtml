@@ -1,10 +1,11 @@
-﻿
+﻿@model OnlineBanking.Data.Models.Customer
+
 @{
     ViewBag.Title = "Dashboard";
 }
 
 <div id="account-dashboard">
-    <h2 class="page-heading">Overview of Accounts</h2>
+    <h2 class="page-heading">Overview of Accounts - @Model.Firstname</h2>
     <br />
     <br />
 
@@ -84,7 +85,7 @@
                     <div class="card">
                         <div class="top-block">
                             <span class="card-account">
-                                Current Account
+                                Credit Account
                             </span>
                         </div>
                         <div class="card-number">

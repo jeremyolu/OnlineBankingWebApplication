@@ -1,4 +1,5 @@
-﻿using OnlineBanking.Data.Services;
+﻿using OnlineBanking.Data.Repositories;
+using OnlineBanking.Data.Services;
 using OnlineBanking.Data.ViewModels.AuthenticationViewModels;
 using System.Web.Mvc;
 
@@ -9,7 +10,11 @@ namespace OnlineBanking.Controllers
         [Route("account/dashboard")]
         public ActionResult Index()
         {
-            return View();
+            var repo = new CustomerRepository();
+
+            var customer = repo.GetCustomerByAccountNo(20802074);
+
+            return View(customer);
         }
 
         public ActionResult Register()
