@@ -76,5 +76,15 @@ namespace OnlineBanking.Controllers
         {
             return View();
         }
+
+        public ActionResult Messages()
+        {
+            return View();
+        }
+
+        public ActionResult Settings()
+        {
+            return View();
+        }
     }
 }

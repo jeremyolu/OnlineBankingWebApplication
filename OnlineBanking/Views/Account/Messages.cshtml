@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Messages";
+}
+
+@section Styles {
+    <style>
+        body, html {
+            background-color: #FFFFFF !important;
+        }
+    </style>
+}
+
+<div id="messages-page">
+    <div class="messages-container">
+        <h2 class="page-heading">Messages</h2>
+
+        <div class="spacer"></div>
+
+        <div class="alert alert-info">
+            <strong>Info!</strong> You have unread messages for your account. Please read and take action.
+        </div>
+
+        <div class="spacer"></div>
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#inbox">Inbox</a></li>
+            <li><a data-toggle="tab" href="#unread">Unread (2)</a></li>
+            <li><a data-toggle="tab" href="#read">Read</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="inbox" class="tab-pane fade in active">
+                <h3>Inbox</h3>
+                <div class="message-item">
+                    <div class="spacer"></div>
+                    <div class="message-box"> <img src="~/Images/logos/main-logo.png" alt="logo" style="width:100%;"> <p>Hello. How are you today?</p> <span>11:00</span> </div>
+                </div>
+            </div>
+            <div id="unread" class="tab-pane fade">
+                <h3>Unread</h3>
+                <div class="message-item">
+                    <div class="spacer"></div>
+                    <div class="message-box"> <img src="~/Images/logos/main-logo.png" alt="logo" style="width:100%;"> <p>Hello. How are you today?</p> <span>11:00</span> </div>
+                </div>
+            </div>
+            <div id="read" class="tab-pane fade">
+                <h3>Read</h3>
+                <div class="message-item">
+                    <div class="spacer"></div>
+                    <div class="message-box"> <img src="~/Images/logos/main-logo.png" alt="logo" style="width:100%;"> <p>Hello. How are you today?</p> <span>11:00</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
