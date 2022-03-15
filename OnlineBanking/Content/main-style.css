@@ -178,7 +178,11 @@ H4.product-item {
     margin-top: 30px;
 }
 
-/*dashboard*/
+.home-news-links .fa-solid {
+    margin-right: 5px;
+}
+
+/*dashboard page*/
 
 .account-item {
     display: flex;
@@ -261,6 +265,22 @@ h4.account-balance-text {
     font-size: 28px;
     margin: -15px 0 0 0;
     text-align-last: center;
+}
+
+/*current account*/
+
+.current-account-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 5px 20px 10px 20px;
+    border-radius: 10px;
+}
+
+.current-account-balances {
+    text-align: right;
 }
 
 /*footer*/

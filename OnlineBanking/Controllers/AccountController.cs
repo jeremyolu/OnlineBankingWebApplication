@@ -7,14 +7,21 @@ namespace OnlineBanking.Controllers
 {
     public class AccountController : Controller
     {
+        private PaymentService _paymentService;
+
+        public AccountController()
+        {
+            _paymentService = new PaymentService();
+        }
+
         [Route("account/dashboard")]
         public ActionResult Index()
         {
             var repo = new CustomerRepository();
 
-            var customer = repo.GetCustomerByAccountNo(20802074);
+            //var customer = repo.GetCustomerByAccountNo(20802074);
 
-            return View(customer);
+            return View();
         }
 
         public ActionResult Register()
@@ -54,6 +61,18 @@ namespace OnlineBanking.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model)
+        {
+            return View();
+        }
+
+        public ActionResult CurrentAccount()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ProcessPayment()
         {
             return View();
         }

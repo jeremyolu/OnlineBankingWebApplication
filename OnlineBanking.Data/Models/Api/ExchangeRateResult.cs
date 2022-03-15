@@ -1,4 +1,4 @@
-﻿namespace OnlineBanking.Data.Models
+﻿namespace OnlineBanking.Data.Models.Api
 {
     public class ExchangeRateResult
     {

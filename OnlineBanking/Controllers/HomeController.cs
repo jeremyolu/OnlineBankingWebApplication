@@ -1,17 +1,23 @@
-﻿using System.Web.Mvc;
+﻿using OnlineBanking.Data.Services;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace OnlineBanking.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private HomeService _homeService;
+
+        public HomeController()
         {
-            return View();
+            _homeService = new HomeService();
         }
 
-        public ActionResult Ha()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var model = await _homeService.InitialiseHomeViewModel();
+
+            return View(model);
         }
 
         public ActionResult About()

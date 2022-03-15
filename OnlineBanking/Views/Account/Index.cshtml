@@ -1,11 +1,11 @@
-﻿@model OnlineBanking.Data.Models.Customer
+﻿@model OnlineBanking.Data.ViewModels.AccountViewModels.PaymentViewModel
 
 @{
     ViewBag.Title = "Dashboard";
 }
 
 <div id="account-dashboard">
-    <h2 class="page-heading">Overview of Accounts - @Model.Firstname</h2>
+    <h2 class="page-heading">Overview of Accounts</h2>
     <br />
     <br />
 
@@ -23,11 +23,11 @@
                         <h4 class="account-balance-text">£252.90</h4>
                         <div class="spacer"></div>
                         <div class="account-cta-btn">
-                            <button class="btn btn-main">Make Payment</button>
+                            <button type="button" class="btn btn-main" data-toggle="modal" data-target="#CurrentAccountPaymentModal">Make Payment</button>
                         </div>
                         <div class="spacer"></div>
                         <div class="account-cta-btn">
-                            <button class="btn btn-main">View Account</button>
+                            <a href="/account/currentaccount" class="btn btn-main">View Account</a>
                         </div>
                     </div>
                     <div class="card">
@@ -57,11 +57,79 @@
                 </div>
             </div>
         </div>
+       
+        <!-- Current Account Payment Modal -->
+        <div id="CurrentAccountPaymentModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Make a Payment</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning">
+                            <strong>Warning!</strong>
+                            <div class="spacer"></div>
+                            <p>Be aware of scams. Make sure that you are supply the correct details to pay this person.</p>
+                        </div>
+                        <div class="payment-form-container">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <p>Enter the name of the person you would like to pay</p>
+                                    @Html.EditorFor(model => model.Payment.RecipientName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Recipient Name" } })
+                                    @Html.ValidationMessageFor(model => model.Payment.RecipientName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Surname</label>
+                                    <p>Ente rthe surname of the person you would like to pay</p>
+                                    @Html.EditorFor(model => model.Payment.RecipientSurname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Recipient Surname" } })
+                                    @Html.ValidationMessageFor(model => model.Payment.RecipientSurname, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Payment Reference</label>
+                                    <p>Optional - a payment reference so the ricipient knows about the payment</p>
+                                    @Html.EditorFor(model => model.Payment.PaymentReference, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Payment Reference" } })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Recipient Account No</label>
+                                    <p>Enter the ricipient account number to send an amount to</p>
+                                    @Html.EditorFor(model => model.Payment.RecipientAccountNo, new { htmlAttributes = new { @class = "form-control", @type = "number", @placeholder = "Enter Recipient Account No" } })
+                                    @Html.ValidationMessageFor(model => model.Payment.RecipientAccountNo, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Payment Amount</label>
+                                    <p>Enter the amount to send</p>
+                                    @Html.EditorFor(model => model.Payment.PaymentAmount, new { htmlAttributes = new { @class = "form-control", @type = "number", @placeholder = "Enter Amount" } })
+                                    @Html.ValidationMessageFor(model => model.Payment.PaymentAmount, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Make Payment" class="btn btn-main" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-main" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
     <div class="spacer"></div>
 
-    <section id="current-accounts-section-container account-section">
+    <section id="current-accounts-section-container account-section" style="display:none;">
         <div class="row">
             <div class="col-md-12">
                 <div class="account-item">
