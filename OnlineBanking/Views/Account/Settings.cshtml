@@ -1,22 +1,107 @@
-﻿
+﻿@model OnlineBanking.Data.ViewModels.AccountViewModels.SettingsViewModel
+
 @{
     ViewBag.Title = "Settings";
 }
 
 <div id="settings-page">
-    <div class="messages-container">
+    <div class="settings-container">
         <h2 class="page-heading">Settings</h2>
 
         <div class="spacer"></div>
 
-        <div class="alert alert-warning">
-            <strong>Info!</strong> Ensure you supply the correc credentials for your account.
+        <div class="alert alert-info">
+            <strong>Info!</strong> Ensure you supply the correct details when updating your account.
         </div>
 
         <div class="spacer"></div>
 
-        <div class="settings-form-container">
+        <div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="settings-form-container">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
 
+                            <div class="form-group">
+                                <label>Firstname</label>
+                                @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled", @placeholder = "Enter Firstname" } })
+                                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Middle name(s)</label>
+                                @Html.EditorFor(model => model.Middlenames, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled", @placeholder = "Enter Middle name (s)" } })
+                                @Html.ValidationMessageFor(model => model.Middlenames, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Surname</label>
+                                @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled", @placeholder = "Enter Surname" } })
+                                @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <p>Your birthday so we know how old you are</p>
+                                <input type="date" id="DOB" name="DOB" class="form-control" disabled>
+                                @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <p>Update your email address so we can send you information</p>
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @type = "Email", @placeholder = "Enter Email @" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Address</label>
+                                <p>Update your home address so we know where to send your letters</p>
+                                @Html.TextAreaFor(model => model.Address, new { cols = 35, @rows = 3, @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Postcode</label>
+                                <p>Update your home postcode so we know where to send your letters</p>
+                                @Html.EditorFor(model => model.Postcode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Postcode" } })
+                                @Html.ValidationMessageFor(model => model.Postcode, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Account Password</label>
+                                <p>Your current password for your online banking account</p>
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password", @placeholder = "Current Password" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                <div class="spacer"></div>
+                                <div class="spacer"></div>
+
+                                <p>Create a new password</p>
+                                @Html.EditorFor(model => model.NewPassword, new { htmlAttributes = new { @class = "form-control", @type = "password", @placeholder = "Create New Password" } })
+                                @Html.ValidationMessageFor(model => model.NewPassword, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Update Details" class="btn btn-main" />
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="help-links-container">
+                        <h4>Help Links</h4>
+                        <div class="spacer"></div>
+                        <a href="/account/forgotpassword" class="main-link">Forgotten your account password?</a>
+                        <div class="spacer"></div>
+                        <a href="/account/register" class="main-link">No account? Register now!</a>
+                        <div class="spacer"></div>
+                        <a href="/account/testaccounts" class="main-link">Login with test accounts</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

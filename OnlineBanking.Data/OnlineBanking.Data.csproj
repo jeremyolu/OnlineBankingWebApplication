@@ -66,6 +66,7 @@
     <Compile Include="Settings\Database.cs" />
     <Compile Include="ViewModels\AccountViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\PaymentViewModel.cs" />
+    <Compile Include="ViewModels\AccountViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\AuthenticationViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\AuthenticationViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />

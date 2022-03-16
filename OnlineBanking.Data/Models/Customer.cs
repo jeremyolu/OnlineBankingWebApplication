@@ -4,7 +4,7 @@ namespace OnlineBanking.Data.Models
 {
     public class Customer
     {
-        public int CustomerAccNo { get; set; }
+        public int CustomerNo { get; set; }
         public string Firstname { get; set; }
         public string MiddleNames { get; set; }
         public string Surname { get; set; }

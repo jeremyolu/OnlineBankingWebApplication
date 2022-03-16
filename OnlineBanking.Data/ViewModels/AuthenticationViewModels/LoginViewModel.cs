@@ -4,8 +4,8 @@ namespace OnlineBanking.Data.ViewModels.AuthenticationViewModels
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Account number is required")]
-        public int AccountNumber { get; set; }
+        [Required(ErrorMessage = "Customer number is required")]
+        public int CustomerNo { get; set; }
 
         [Required(ErrorMessage = "Account password is required")]
         [DataType(DataType.Password)]

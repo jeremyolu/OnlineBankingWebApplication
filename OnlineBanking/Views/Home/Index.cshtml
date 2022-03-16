@@ -39,7 +39,7 @@
                     <h4>Saving Accounts</h4>
                     <i class="fa-solid fa-piggy-bank"></i>
                     <div class="spacer"></div>
-                    <p>Apply for a savinga account and save your money at no cost</p>
+                    <p>Apply for a savings account and save your money at no cost</p>
                     <a href="/account/register" class="btn btn-main">Find out more</a>
                 </div>
             </div>
@@ -56,30 +56,56 @@
         </div>
     </section>
 
-    <section class="home-news-links">
-        <h4>Latest News</h4>
+    <div class="news-section">
+        <div class="row">
+            <div class="col-md-8">
+                <section class="information-container">
+                    <h4>Latest News</h4>
 
-        @if (Model.IsNewsDisplayed)
-        {
-            foreach (var article in Model.NewsResults.Take(5))
-            {
-                <div class="spacer"></div>
-                <a href="@article.link" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> @article.title</a>
-            }
-        }
-        else
-        {
+                    @if (Model.IsNewsDisplayed)
+                    {
+                        foreach (var article in Model.NewsResults.Take(5))
+                        {
+                            <div class="spacer"></div>
+                            <a href="@article.link" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> @article.title</a>
+                        }
+                    }
+                    else
+                    {
+                        <div class="spacer"></div>
+                        <a href="https://www.globenewswire.com/news-release/2022/03/15/2403124/19499/en/Matrix-PDM-Engineering-Awarded-EPC-for-Expansion-of-Natural-Gas-Processing-Facility-to-Double-Existing-Facility-Capacity.html" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Matrix PDM Engineering Awarded EPC for Expansion of Natural Gas Processing Facility to Double Existing Facility Capacity</a>
+                        <div class="spacer"></div>
+                        <a href="https://www.fool.com/investing/2022/03/15/novavax-is-betting-its-covid-vaccine-will-win-us-a/?source=iedfolrf0000001" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Novavax Is Betting Its COVID Vaccine Will Win U.S. Authorization. Should You?</a>
+                        <div class="spacer"></div>
+                        <a href="https://www.fool.com/investing/2022/03/15/why-crypto-investors-yawned-at-amcs-early-adoption/?source=iedfolrf0000001" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Why Crypto Investors Yawned at AMC&#39;s Early Adoption of Dogecoin and Shiba Inu</a>
+                        <div class="spacer"></div>
+                        <a href="https://www.carandbike.com/news/ford-to-introduce-3-new-evs-and-4-new-electric-cvs-in-europe-by-2024-2823934?publisher=newsstand&amp;amp;utm_source=googlenews" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ford To Introduce 3 New EVs And 4 New Electric CVs In Europe By 2024</a>
+                        <div class="spacer"></div>
+                        <a href="https://www.fool.com/investing/2022/03/15/warren-buffett-gained-182-billion-these-4-stocks/?source=iedfolrf0000001" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Warren Buffett Has Gained Over $182 Billion On These 4 Stocks</a>
+                    }
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section class="information-container">
+                    <h4>Latest Exchange Rates</h4>
+                    <div class="spacer"></div>
+                    <div class="exchange-rates-list">
+                        <p class="exchange-rate-text"><i class="fa-solid fa-coins"></i> GBP - EUR - @Model.EuroRate</p>
+                        <p class="exchange-rate-text"><i class="fa-solid fa-coins"></i> GBP - USD - @Model.DollarRate</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <section class="loan-hero-image">
+        <div class="loan-hero-text">
+            <h1 class="hero-heading">Let us take the stress out of borrowing money</h1>
+            <p>Apply for a loan between £1,000 and £10,000</p>
+            <p>Representative 3.4% APR</p>
             <div class="spacer"></div>
-            <a href="https://www.globenewswire.com/news-release/2022/03/15/2403124/19499/en/Matrix-PDM-Engineering-Awarded-EPC-for-Expansion-of-Natural-Gas-Processing-Facility-to-Double-Existing-Facility-Capacity.html" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Matrix PDM Engineering Awarded EPC for Expansion of Natural Gas Processing Facility to Double Existing Facility Capacity</a>
-            <div class="spacer"></div>
-            <a href="https://www.fool.com/investing/2022/03/15/novavax-is-betting-its-covid-vaccine-will-win-us-a/?source=iedfolrf0000001" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Novavax Is Betting Its COVID Vaccine Will Win U.S. Authorization. Should You?</a>
-            <div class="spacer"></div>
-            <a href="https://www.fool.com/investing/2022/03/15/why-crypto-investors-yawned-at-amcs-early-adoption/?source=iedfolrf0000001" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Why Crypto Investors Yawned at AMC&#39;s Early Adoption of Dogecoin and Shiba Inu</a>
-            <div class="spacer"></div>
-            <a href="https://www.carandbike.com/news/ford-to-introduce-3-new-evs-and-4-new-electric-cvs-in-europe-by-2024-2823934?publisher=newsstand&amp;amp;utm_source=googlenews" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ford To Introduce 3 New EVs And 4 New Electric CVs In Europe By 2024</a>
-            <div class="spacer"></div>
-            <a href="https://www.fool.com/investing/2022/03/15/warren-buffett-gained-182-billion-these-4-stocks/?source=iedfolrf0000001" target="_blank" class="main-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Warren Buffett Has Gained Over $182 Billion On These 4 Stocks</a>
-        }
+            <a href="/account/login" class="btn btn-main"><i class="fa-solid fa-arrow-right-to-bracket"></i> Apply Today</a>
+        </div>
     </section>
 
 </div>

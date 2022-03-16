@@ -82,7 +82,18 @@ namespace OnlineBanking.Controllers
             return View();
         }
 
+        public ActionResult Transactions()
+        {
+            return View();
+        }
+
         public ActionResult Settings()
+        {
+            return View();
+        }
+
+        [Route("account/help-center")]
+        public ActionResult HelpCenter()
         {
             return View();
         }

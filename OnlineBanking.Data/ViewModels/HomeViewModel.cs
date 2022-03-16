@@ -7,5 +7,7 @@ namespace OnlineBanking.Data.ViewModels
     {
         public bool IsNewsDisplayed { get; set; }
         public IEnumerable<NewsResult> NewsResults { get; set; }
+        public string EuroRate { get; set; }
+        public string DollarRate { get; set; }
     }
 }

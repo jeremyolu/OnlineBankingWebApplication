@@ -1,13 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace OnlineBanking.Data.ViewModels.AuthenticationViewModels
+namespace OnlineBanking.Data.ViewModels.AccountViewModels
 {
-    public class RegisterViewModel
+    public class SettingsViewModel
     {
         public Guid CustomerId { get; set; }
 
-        [Required( ErrorMessage = "Firstname is required")]
+        [Required(ErrorMessage = "Firstname is required")]
         public string Firstname { get; set; }
 
         [Required(ErrorMessage = "Middle Name(s) are required")]
@@ -33,10 +33,9 @@ namespace OnlineBanking.Data.ViewModels.AuthenticationViewModels
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Confirm Password is required")]
-        [StringLength(int.MaxValue, ErrorMessage = "Password must be at least 8 characters", MinimumLength = 8)]
+        [Required(ErrorMessage = "New password is required")]
+        [StringLength(int.MaxValue, ErrorMessage = "New password must be at least 8 characters", MinimumLength = 8)]
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Passwords do not match")]
-        public string ConfirmPassword { get; set; }
+        public string NewPassword { get; set; }
     }
 }

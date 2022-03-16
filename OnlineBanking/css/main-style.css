@@ -160,7 +160,7 @@ H4.product-item {
 
 .confidence-hero-image {
     position: relative;
-    height: 35vh;
+    height: 25vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/heros/safe-banking-hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -175,15 +175,37 @@ H4.product-item {
     color: #FFFFFF;
 }
 
-.home-news-links {
+.information-container {
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 20px;
     margin-top: 30px;
 }
 
-.home-news-links .fa-solid {
+.information-container .fa-solid {
     margin-right: 5px;
+}
+
+p.exchange-rate-text {
+    font-weight: bold;
+    color: #006A4D;
+}
+
+.loan-hero-image {
+    position: relative;
+    height: 25vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/heros/loan-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.loan-hero-text {
+    padding: 30px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 /*dashboard page*/
