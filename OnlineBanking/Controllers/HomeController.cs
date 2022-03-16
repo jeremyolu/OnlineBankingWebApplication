@@ -20,11 +20,13 @@ namespace OnlineBanking.Controllers
             return View(model);
         }
 
+        [Route("about")]
         public ActionResult About()
         {
             return View();
         }
 
+        [Route("contact")]
         public ActionResult Contact()
         {
             return View();
