@@ -82,7 +82,7 @@ namespace OnlineBanking.Controllers
             return View();
         }
 
-        public ActionResult Transactions()
+        public ActionResult Transactions(string accountId)
         {
             return View();
         }
