@@ -6,11 +6,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace OnlineBanking.Data.Services
+namespace OnlineBanking.Data.Services.Database
 {
     public class UserDatabaseService
     {
-        public static string OnlineBankingDB = SqlHelper.GetDatabase("OnlineBankingDB");
+        public static string OnlineBankingDB = SqlHelper.GetDatabase("OnlineBankingDBLive");
 
         public bool CreateCustomer(RegisterViewModel model)
         {
@@ -20,7 +20,7 @@ namespace OnlineBanking.Data.Services
             {
                 using(var conn = new SqlConnection(OnlineBankingDB))
                 {
-                    var customer = conn.Execute(sp, new { Firstname = model.Firstname, 
+                    var customer = conn.Execute(sp, new { Title = model.Title, Firstname = model.Firstname, 
                         Middlenames = model.Middlenames, Surname = model.Surname, Email = model.Email, DOB = model.DOB, 
                         Address = model.Address, Postcode = model.Postcode, Password = model.Password }, commandType: CommandType.StoredProcedure);
 

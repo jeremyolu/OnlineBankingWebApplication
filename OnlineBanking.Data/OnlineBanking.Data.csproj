@@ -62,7 +62,7 @@
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\PaymentService.cs" />
-    <Compile Include="Services\UserDatabaseService.cs" />
+    <Compile Include="Services\Database\UserDatabaseService.cs" />
     <Compile Include="Settings\Database.cs" />
     <Compile Include="ViewModels\AccountViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\PaymentViewModel.cs" />

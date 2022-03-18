@@ -7,6 +7,9 @@ namespace OnlineBanking.Data.ViewModels.AuthenticationViewModels
     {
         public Guid CustomerId { get; set; }
 
+        [Required(ErrorMessage = "Title is required")]
+        public string Title { get; set; }
+
         [Required( ErrorMessage = "Firstname is required")]
         public string Firstname { get; set; }
 

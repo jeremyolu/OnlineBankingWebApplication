@@ -19,6 +19,18 @@
             @Html.AntiForgeryToken()
 
             <div class="form-group">
+                <label for="Title">Select Title</label>
+                <p>What is your title?</p>
+                <select class="form-control" id="Title" name="Title">
+                    <option value="Mr">Mr</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Dr">Dr</option>
+                </select>
+                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
                 <label>Firstname</label>
                 <p>So we know what to call you</p>
                 @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Firstname" } })
