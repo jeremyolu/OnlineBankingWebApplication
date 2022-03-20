@@ -41,6 +41,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers.Crypto, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Helpers.Crypto.3.2.3\lib\net40\System.Web.Helpers.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,10 +64,12 @@
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\PaymentService.cs" />
     <Compile Include="Services\Database\UserDatabaseService.cs" />
     <Compile Include="Settings\Database.cs" />
+    <Compile Include="ViewModels\AccountViewModels\CustomerDetailsViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\PaymentViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModels\SettingsViewModel.cs" />

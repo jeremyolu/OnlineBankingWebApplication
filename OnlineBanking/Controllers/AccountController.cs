@@ -2,16 +2,20 @@
 using OnlineBanking.Data.Services;
 using OnlineBanking.Data.Services.Database;
 using OnlineBanking.Data.ViewModels.AuthenticationViewModels;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace OnlineBanking.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
+        private AuthenticationService _authenticationService;
         private PaymentService _paymentService;
 
         public AccountController()
         {
+            _authenticationService = new AuthenticationService();
             _paymentService = new PaymentService();
         }
 
@@ -25,11 +29,13 @@ namespace OnlineBanking.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterViewModel model)
@@ -49,6 +55,7 @@ namespace OnlineBanking.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         public ActionResult Login(string application)
         {
             if (!string.IsNullOrEmpty(application))
@@ -59,11 +66,23 @@ namespace OnlineBanking.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var authenticated = _authenticationService.LoginCustomer(model);
+
+                if (authenticated)
+                {
+                    return RedirectToAction("index");
+                }
+
+            }
+
+            return View(model);
         }
 
         public ActionResult CurrentAccount()
@@ -93,10 +112,20 @@ namespace OnlineBanking.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [Route("account/help-center")]
         public ActionResult HelpCenter()
         {
-            return View();
+            var customerId = User.Identity.Name;
+
+            return Content(customerId);
+        }
+
+        public ActionResult Logout()
+        {
+            _authenticationService.Logout();
+
+            return RedirectToAction("login");
         }
     }
 }

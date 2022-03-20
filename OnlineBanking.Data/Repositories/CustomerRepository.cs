@@ -11,9 +11,9 @@ namespace OnlineBanking.Data.Repositories
 {
     public class CustomerRepository
     {
-        public static string OnlineBankingDB = SqlHelper.GetDatabase("OnlineBankingDB");
+        public static string OnlineBankingDB = SqlHelper.GetDatabase("OnlineBankingDBLive");
 
-        public Customer GetCustomerByAccountNo(int customerAccNo)
+        public Customer GetCustomerByAccountNo(int customerNo)
         {
             string sp = "spGetCustomerAccountByAccountNo";
 
@@ -22,7 +22,7 @@ namespace OnlineBanking.Data.Repositories
                 using (var conn = new SqlConnection(OnlineBankingDB))
                 {
 
-                    var customer = conn.Query<Customer>(sp, new { CustomerAccNo = customerAccNo }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    var customer = conn.Query<Customer>(sp, new { CustomerAccNo = customerNo }, commandType: CommandType.StoredProcedure).FirstOrDefault();
 
                     Debug.WriteLine(customer);
 
@@ -37,20 +37,20 @@ namespace OnlineBanking.Data.Repositories
             return null;
         }
 
-        public bool GetCustomerByLoginCredentials(int customerAccNo, string password)
+        public CustomerLogin GetCustomerLogin(int customerNo)
         {
-            string sp = "spGetCustomerAccountByAccountNo";
+            string sp = "spGetCustomerLogin";
 
             try
             {
                 using (var conn = new SqlConnection(OnlineBankingDB))
                 {
 
-                    var customerLogin = conn.Query<CustomerLogin>(sp, new { CustomerAccountNo = customerAccNo }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    var customerLogin = conn.Query<CustomerLogin>(sp, new { CustomerNo = customerNo }, commandType: CommandType.StoredProcedure).FirstOrDefault();
 
                     Debug.WriteLine(customerLogin);
 
-                    return true;
+                    return customerLogin;
                 }
             }
             catch (Exception ex)
@@ -58,7 +58,7 @@ namespace OnlineBanking.Data.Repositories
                 Debug.WriteLine(ex.Message);
             }
 
-            return false;
+            return null;
         }
     }
 

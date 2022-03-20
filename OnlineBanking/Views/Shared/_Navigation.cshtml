@@ -1,29 +1,33 @@
-﻿
-<div class="account-topbar">
-    <div class="container">
-        <div class="account-topbar-content">
-            <div id="name-account-section">
-                <p class="account-topbar-name-title">Welcome back, Jeremy!</p>
-                <small class="last-logged-in-date-text">Last Logged In: 08-03-2022 9:15PM</small>
-            </div>
-            <div id="links-account-section">
-                <ul>
-                    <li><a href="/account/messages">Messages</a></li>
-                    <span class="account-topbar-link-divider">|</span>
-                    <li><a href="/account/dashboard">Accounts</a></li>
-                    <span class="account-topbar-link-divider">|</span>
-                    <li><a href="/account/transactions">Transactions</a></li>
-                    <span class="account-topbar-link-divider">|</span>
-                    <li><a href="/account/settings">Settings</a></li>
-                    <span class="account-topbar-link-divider">|</span>
-                    <li><a href="/account/help-center">Help Center</a></li>
-                    <span class="account-topbar-link-divider">|</span>
-                    <li><a href="/account/logout">Logout</a></li>
-                </ul>
+﻿@model OnlineBanking.Data.ViewModels.AccountViewModels.CustomerDetailsViewModel
+
+@if(User.Identity.IsAuthenticated)
+{
+    <div class="account-topbar">
+        <div class="container">
+            <div class="account-topbar-content">
+                <div id="name-account-section">
+                    <p class="account-topbar-name-title">Welcome back, Jeremy!</p>
+                    <small class="last-logged-in-date-text">Last Logged In: @Model.CustomerLogin.LastLoggedIn</small>
+                </div>
+                <div id="links-account-section">
+                    <ul>
+                        <li><a href="/account/messages">Messages</a></li>
+                        <span class="account-topbar-link-divider">|</span>
+                        <li><a href="/account/dashboard">Accounts</a></li>
+                        <span class="account-topbar-link-divider">|</span>
+                        <li><a href="/account/transactions">Transactions</a></li>
+                        <span class="account-topbar-link-divider">|</span>
+                        <li><a href="/account/settings">Settings</a></li>
+                        <span class="account-topbar-link-divider">|</span>
+                        <li><a href="/account/help-center">Help Center</a></li>
+                        <span class="account-topbar-link-divider">|</span>
+                        <li><a href="/account/logout">Logout</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
+}
 
 <div class="navbar main-background-color">
     <div class="container">
@@ -73,7 +77,15 @@
                     </ul>
                 </li>
                 <li><a href="/contact">Contact</a></li>
-                <li><a href="/help">Help</a></li>
+                <li><a href="/account/help-center">Help</a></li>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li><a href="/account/login">Login</a></li>
+                }
+                else
+                {
+                    <li><a href="/account/logout">Logout</a></li>
+                }
             </ul>
         </div>
     </div>

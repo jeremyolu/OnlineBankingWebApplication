@@ -1,12 +1,23 @@
-﻿using System.Web.Mvc;
+﻿using OnlineBanking.Data.Services;
+using System.Web.Mvc;
 
 namespace OnlineBanking.Controllers
 {
     public class GlobalController : Controller
     {
-        public ActionResult Index()
+        private CustomerService _customerService;
+
+        public GlobalController()
         {
-            return View();
+            _customerService = new CustomerService();
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Navigation()
+        {
+            var model = _customerService.InitialiseCustomerDetailsViewModel();
+
+            return PartialView("_Navigation", model);
         }
     }
 }

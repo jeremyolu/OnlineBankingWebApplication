@@ -36,5 +36,24 @@ namespace OnlineBanking.Data.Services.Database
 
             return false;
         }
+
+        public void SetLastLoginDateTimeStamp(string customerId)
+        {
+            string sql = $"UPDATE tblCustomerLogins SET LastLoggedIn = @LastLoggedIn WHERE CustomerId = @CustomerId";
+
+            try
+            {
+                using (var conn = new SqlConnection(OnlineBankingDB))
+                {
+                    var updatedRow = conn.Execute(sql, new { LastLoggedIn = DateTime.Now, CustomerId = customerId });
+
+                    Console.WriteLine(updatedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
     }
 }
