@@ -14,10 +14,10 @@ namespace OnlineBanking.Data.Services
 
         public async Task<HomeViewModel> InitialiseHomeViewModel(bool newsApi = false)
         {
-            var exchangeRates = await _apiService.LoadExchangeRates();
+            //var exchangeRates = await _apiService.LoadExchangeRates();
 
-            var euroRate = exchangeRates.GBP_EUR.ToString("#.##");
-            var dollarRate = exchangeRates.GBP_USD.ToString("#.##");
+            //var euroRate = exchangeRates.GBP_EUR.ToString("#.##");
+            //var dollarRate = exchangeRates.GBP_USD.ToString("#.##");
 
             if (newsApi == true)
             {
@@ -27,8 +27,8 @@ namespace OnlineBanking.Data.Services
                 {
                     IsNewsDisplayed = true,
                     NewsResults = articles,
-                    EuroRate = euroRate,
-                    DollarRate = dollarRate
+                    //EuroRate = euroRate,
+                    //DollarRate = dollarRate
                 };
             }
 
@@ -36,8 +36,8 @@ namespace OnlineBanking.Data.Services
             {
                 IsNewsDisplayed = false,
                 NewsResults = null,
-                EuroRate = euroRate,
-                DollarRate = dollarRate
+                //EuroRate = euroRate,
+                //DollarRate = dollarRate
             };
         }
     }
